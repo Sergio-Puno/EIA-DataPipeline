@@ -1,8 +1,6 @@
 **EIA-DataPipeline** :: IN PROGRESS<br>
 Creating a data pipeline to use the EIA's API and store into a local MySQL data warehouse for use in Power BI.
 
-<br>
-
 ---
 
 Directory
@@ -84,7 +82,9 @@ If you are using PowerBI with MySQL you will need the Connector for NET mentione
 
 - Make sure you download the up to date version of the Connector for .NET
 - Go to the following path/file location 
-  - *C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config* 
+            
+        *C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config* 
+            
 - In this config file you will need to CTRL + F (Find) and search the text "DbProviderFactories", there is a subsection that looks like there is something missing between two lines of the same text, looks like this
 
         <DbProviderFactories>
@@ -103,6 +103,27 @@ I wanted to bring this up now in the event that the same issue comes up for you 
 - Bulding out the Python script, first steps and the outline/hopes 
 - Debugging and creating more modular code
 - see outline file for other things
+
+For the script(s) we need to make sure we are planning for a few key components: API, data transformation, and database connection. EAch unit of this process has its own set of subprocesses, I want to break this down conceptually because there are likely many other way to execute these steps.
+
+**API Calls**
+
+- Pull in API key information from config file
+- Setup the URL(s) that will be called, loop over this list
+- Process JSON response
+- Store meta date regarding the API call
+
+**Data Transformations**
+
+- Bring in the JSON resopnse into `pandas` dataframe
+- Diagnostic checks: data types, NULL's, column names, calculations, etc.
+  
+**Database Connection**
+
+- Establish database connectivity 
+- For each API call, execute SQL query to load data into appropriate tables
+- At the end of the script, close connection
+
 
 <br>
 
@@ -124,3 +145,6 @@ I wanted to bring this up now in the event that the same issue comes up for you 
 
 # Conclusion
 
+This project was a great exercise in working with an API to get data for further processing and later visualization. I think that looking back the biggest update that could be done would be to the gerneral scripts structure as there are similar functions called in order to process the URL's and make the GET requests as well as inserting into the database. There is likely a better OOP approach to reduce the redundancy in code and making the setup more extensible.
+
+As for expanding this project, it would be great to bring in information from other sources outside of EIA and look at ways of combining the data and generating more insightful analysis. I would look to bring in U.S. car sales or information similar to this in order to compare emissions and energy usage in comparison to gas car sales and EV car sales.
