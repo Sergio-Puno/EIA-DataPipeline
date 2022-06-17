@@ -1,4 +1,3 @@
--- FIRST TABLE INFO --
 -- Create database to store our coal consumption data
 CREATE DATABASE coal_consumption;
 
@@ -8,6 +7,7 @@ USE coal_consumption;
 -- View tables in a database
 SHOW TABLES;
 
+-- FIRST TABLE INFO --
 -- Create our table for coal consumption records
 CREATE TABLE state_consumption (
 	report_date DATETIME,
@@ -27,7 +27,6 @@ CREATE TABLE state_consumption (
     coal_consumption DOUBLE,
     state VARCHAR(2)
 );
-
 DESCRIBE state_consumption;
 
 -- Checking my import worked with a simple aggregation
@@ -49,3 +48,16 @@ CREATE TABLE co2_emissions (
     state_id VARCHAR(2),
     state_name VARCHAR(30)
 );
+
+-- Confirm that the table was create and is in the structure we specified
+SHOW TABLES;
+DESCRIBE co2_emissions;
+
+-- While testing the script for multiple file entries, I need this script to reset the database from scratch
+DROP TABLE co2_emissions;
+CREATE TABLE co2_emissions (
+	data_year DATETIME,
+    co2_emission VARCHAR(30),
+    state VARCHAR(2)
+);
+DESCRIBE state_consumption;

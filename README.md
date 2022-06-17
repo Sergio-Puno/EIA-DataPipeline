@@ -22,6 +22,8 @@ This project is focused on creating my own MySQL data warehouse using data from 
 
 In addition to processing the data brought in from the EIA site, I want to take a shot at creating a local "data lake" and logs that will dump the raw JSON files into a folder and also create a log entry with file metadata to track when reports were run and other information.
 
+I will likely continue to work this project as I bring in additional information I find over time and improve the insights that can be extracted from the various data points.
+
 **Tools**:
 
 - Python
@@ -29,15 +31,17 @@ In addition to processing the data brought in from the EIA site, I want to take 
 - SQL
 - Power BI
 
-**Packages** <br>
-*For Python we will use the following packages, brief description here but I will explain the usage more as we move on.*
+**Packages**: <br>
 
 - pandas
 - requests
 - mysql.connector
 - json
 
-<br>
+**Current Data Sources**:
+
+- CO2 Emissions by State
+- Coal Consumption by State
 
 I will first go over the major steps in this project, going over each of the tools used and any issues that I had along with how I resolved them. After these sections I will go into the analysis and observations I had gleamed from the information.
 
