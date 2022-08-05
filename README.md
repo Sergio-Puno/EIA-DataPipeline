@@ -133,8 +133,11 @@ For the script(s) we need to make sure we are planning for a few key components:
 
 # Power BI
 
-- connecting to mysql, all those issues
-- setting up the data model (creating date table, confirming data types)
+As mentioned previously, there were some issues connection Power BI to the MySQL database that I had setup. The core of the problem came from the installed connector on the MySQL side which allowed Power BI to use the proper protocols.
+
+After this issue was resolved, I was able to properly see all my tables and begin setting up a temp dashboard to ensure that the information is what I am looking for and testing out some layouts.
+
+![Sample Power BI Visuals](sample_powerBI_visuals_01.png)
 
 
 <br>
