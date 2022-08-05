@@ -136,7 +136,7 @@ As mentioned previously, there were some issues connection Power BI to the MySQL
 
 After this issue was resolved, I was able to properly see all my tables and begin setting up a temp dashboard to ensure that the information is what I am looking for and testing out some layouts.
 
-![Sample Power BI Visuals](images\sample_powerBI_visuals_01.PNG)
+![Power BI Visuals](images/sample_powerBI_visuals_01.PNG)
 
 The goal here is to take a look at some comparisons between states that are close to each other on the West coast and identify any trends. 
 
